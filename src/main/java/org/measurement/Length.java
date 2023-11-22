@@ -2,9 +2,7 @@ package org.measurement;
 
 import java.util.Objects;
 
-public class Length {
-
-    private final double value;
+public class Length extends Measurement {
 
     private final Unit unit;
 
@@ -52,7 +50,7 @@ public class Length {
     }
 
     public Length(double value, Unit unit) {
-        this.value = value;
+        super(value);
         this.unit = unit;
     }
 
