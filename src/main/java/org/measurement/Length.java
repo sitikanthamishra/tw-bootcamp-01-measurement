@@ -1,7 +1,5 @@
 package org.measurement;
 
-import java.util.Objects;
-
 public class Length extends Measurement {
 
     public static Length centimeter(double value) {
@@ -42,8 +40,9 @@ public class Length extends Measurement {
         super(value, unit);
     }
 
-    public Length add(Length length) {
-        double result = super.add(length);
+    @Override
+    public Measurement add(Measurement length) {
+        double result = super.addValue(length);
         return new Length(this.unit.fromBaseUnit(result), (LengthUnit) this.unit);
     }
 

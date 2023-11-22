@@ -113,7 +113,7 @@ public class LengthTest {
     public void test1000MetersPlus1000MetersEquals2000Meters() {
         Length lhs = meter(1000);
         Length rhs = meter(1000);
-        Length result = lhs.add(rhs);
+        Length result = (Length) lhs.add(rhs);
         assertTrue(result.exactlyEquals(meter(2000)));
         assertFalse(result.exactlyEquals(meter(1000)));
     }
@@ -122,7 +122,7 @@ public class LengthTest {
     public void test1KilometerPlus300MeterEquals1p3Kilometer() {
         Length lhs = kilometer(1);
         Length rhs = meter(300);
-        Length result = lhs.add(rhs);
+        Length result = (Length)lhs.add(rhs);
         assertTrue(kilometer(1.3).exactlyEquals(result));
     }
 
@@ -130,7 +130,7 @@ public class LengthTest {
     public void test500MetersPlus1KilometerEquals1500Meters() {
         Length lhs = meter(500);
         Length rhs = kilometer(1);
-        Length result = lhs.add(rhs);
+        Length result = (Length)lhs.add(rhs);
         assertTrue(meter(1500).exactlyEquals(result));
     }
 }

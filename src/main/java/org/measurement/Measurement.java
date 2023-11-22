@@ -2,7 +2,7 @@ package org.measurement;
 
 import java.util.Objects;
 
-public class Measurement {
+public abstract class Measurement {
 
     protected final double value;
 
@@ -33,7 +33,9 @@ public class Measurement {
         return Objects.hash(this.toBaseUnit());
     }
 
-    protected double add(Measurement measurement) {
+    protected double addValue(Measurement measurement) {
         return this.unit.toBaseUnit(this.value) + measurement.unit.toBaseUnit(measurement.value);
     }
+
+    protected abstract Measurement add(Measurement measurement);
 }
