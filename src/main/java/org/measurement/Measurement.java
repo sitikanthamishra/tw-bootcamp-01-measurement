@@ -34,7 +34,8 @@ public abstract class Measurement {
     }
 
     protected double addValue(Measurement measurement) {
-        return this.unit.toBaseUnit(this.value) + measurement.unit.toBaseUnit(measurement.value);
+        return this.unit.fromBaseUnit(this.unit.toBaseUnit(this.value)
+                + measurement.unit.toBaseUnit(measurement.value));
     }
 
     protected abstract Measurement add(Measurement measurement);

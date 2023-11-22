@@ -42,8 +42,7 @@ public class Length extends Measurement {
 
     @Override
     public Measurement add(Measurement length) {
-        double result = super.addValue(length);
-        return new Length(this.unit.fromBaseUnit(result), (LengthUnit) this.unit);
+        return new Length(super.addValue(length), (LengthUnit) this.unit);
     }
 
 }
