@@ -47,16 +47,4 @@ public class Length extends Measurement {
     public Length(double value, LengthUnit unit) {
         super(value, unit);
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Length length = (Length) o;
-        return this.toBaseUnit() == length.toBaseUnit();
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.toBaseUnit());
-    }
 }

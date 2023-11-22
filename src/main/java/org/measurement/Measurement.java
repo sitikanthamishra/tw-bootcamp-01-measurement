@@ -1,5 +1,7 @@
 package org.measurement;
 
+import java.util.Objects;
+
 public class Measurement {
 
     protected final double value;
@@ -19,5 +21,16 @@ public class Measurement {
         return this.unit.toBaseUnit(this.value);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Measurement length = (Measurement) o;
+        return this.toBaseUnit() == length.toBaseUnit();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.toBaseUnit());
+    }
 
 }
