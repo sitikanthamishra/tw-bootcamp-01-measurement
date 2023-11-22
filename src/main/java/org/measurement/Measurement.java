@@ -33,4 +33,7 @@ public class Measurement {
         return Objects.hash(this.toBaseUnit());
     }
 
+    protected double add(Measurement measurement) {
+        return this.unit.toBaseUnit(this.value) + measurement.unit.toBaseUnit(measurement.value);
+    }
 }

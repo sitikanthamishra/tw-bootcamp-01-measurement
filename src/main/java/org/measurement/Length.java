@@ -4,12 +4,6 @@ import java.util.Objects;
 
 public class Length extends Measurement {
 
-    public Length add(Length length) {
-        double result = this.unit.toBaseUnit(this.value) + length.unit.toBaseUnit(length.value);
-        return new Length(this.unit.fromBaseUnit(result), (LengthUnit) this.unit);
-    }
-
-
     public static Length centimeter(double value) {
         return new Length(value, LengthUnit.CENTIMETER);
     }
@@ -47,4 +41,10 @@ public class Length extends Measurement {
     public Length(double value, LengthUnit unit) {
         super(value, unit);
     }
+
+    public Length add(Length length) {
+        double result = super.add(length);
+        return new Length(this.unit.fromBaseUnit(result), (LengthUnit) this.unit);
+    }
+
 }
