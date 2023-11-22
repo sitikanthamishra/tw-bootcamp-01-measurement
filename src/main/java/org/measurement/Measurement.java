@@ -15,4 +15,9 @@ public class Measurement {
         return this.value == measurement.value && this.unit == measurement.unit;
     }
 
+    protected double toBaseUnit() {
+        return this.unit.toBaseUnit(this.value);
+    }
+
+
 }

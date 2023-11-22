@@ -48,10 +48,6 @@ public class Length extends Measurement {
         super(value, unit);
     }
 
-    private double toBaseUnit() {
-        return this.unit.toBaseUnit(this.value);
-    }
-
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
