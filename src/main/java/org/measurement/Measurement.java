@@ -11,4 +11,8 @@ public class Measurement {
         this.unit = unit;
     }
 
+    public boolean exactlyEquals(Measurement measurement) {
+        return this.value == measurement.value && this.unit == measurement.unit;
+    }
+
 }

@@ -9,9 +9,6 @@ public class Length extends Measurement {
         return new Length(this.unit.fromBaseUnit(result), (LengthUnit) this.unit);
     }
 
-    public boolean exactlyEquals(Length length) {
-        return this.value == length.value && this.unit == length.unit;
-    }
 
     public static Length centimeter(double value) {
         return new Length(value, LengthUnit.CENTIMETER);
