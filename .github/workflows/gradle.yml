@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [java]
+        language: [java-kotlin]
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
