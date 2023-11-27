@@ -20,7 +20,10 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [java]
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
@@ -32,3 +35,9 @@ jobs:
       uses: gradle/gradle-build-action@v2 # v2.6.0
       with:
         arguments: build
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+        with:
+          languages: ${{ matrix.language }}
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2    
